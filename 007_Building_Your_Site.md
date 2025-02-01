@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Credits
+title: Building Your Site
 number: 7 
 ---
 
