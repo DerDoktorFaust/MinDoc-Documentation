@@ -452,14 +452,13 @@ number: 7
     Copy this exactly (just select it and copy it):  
 
  
+{% assign **intro_images** = site.mindoc_media \| **sort:** \"order\"
+\| **where_exp:** \"**item**\", **\"item.page** == \'introduction\'\"
+\| **where_exp:** \"**item**\", \"**item**.**media_type** == \'image\'\" \|  **where_exp:** \"**item**\", \"**item**.**order** ==
+\'02\'\" %} 
 
-> {% assign **intro_images** = site.mindoc_media \| **sort:** \"order\"
-> \| **where_exp:** \"**item**\", **\"item.page** == \'introduction\'\"
-> \| **where_exp:** \"**item**\", \"**item**.**media_type** ==
-> \'image\'\" \|  **where_exp:** \"**item**\", \"**item**.**order** ==
-> \'02\'\" %} 
->
-> {% include media.html pages=**intro_images** %} 
+
+{% include media.html pages=intro_images %} 
 
  
 
@@ -517,7 +516,7 @@ number: 7
 
 <!-- -->
 
-5.  **How to Add A PDF.** Upload your PDF file to /media_files/pdfs like you did for images. Create a link with the following:
+1.  **How to Add A PDF.** Upload your PDF file to /media_files/pdfs like you did for images. Create a link with the following:
 
 [Download PDF file]({{ site.baseurl }}/media_files/pdfs/FILE_NAME_OF_PDF.pdf)
 
